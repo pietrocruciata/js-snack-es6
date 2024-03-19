@@ -75,24 +75,22 @@ const students = [
 //CREARE LA LISTA CON I NOMI IN MAIUSCOLO
 // function capitalize(string) {
 //     let newString = string.toUpperCase()
-
 //     return newString
 // }
 
 const formattedElementArray = []
 
-// for (let i = 0; i < students.length; i++) {
-//     const studentsElement = students[i];
-//     const formattedElement = capitalize(studentsElement)
-//     formattedElementArray.push(formattedElement)
-    
-// }
+students.forEach((el) => {
+    const nameLower = el.nome.toUpperCase()
+    formattedElementArray.push(nameLower)
+})
 
 console.log(formattedElementArray);
+
 //CREARE UNA LISTA DI TUTTI GLI STUDENTI CHE HANNO DEI VOTI SUPERIORI A 70
 let studentsGoods = students.filter((el) => el.grades > 70)
 console.log(studentsGoods);
 
 //CREARE UNA LISTA DI TUTTI GLI STUDENTI CHE HANNO DEI VOTI SUPERIORI A 70 E ID SUPERIORE A 120
 let studentsGoodsId = students.filter((el) => el.grades > 70 && el.id > 120)
-console.log(studentsGoods);
+console.log(studentsGoodsId);
