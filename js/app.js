@@ -133,9 +133,9 @@ const bicycles = [
 
 let lowestWeightFound = bicycles[0]
 
-for ( let i = 1; i < bicycles.length; i++){
-    const currentWeight = bicycles[i]            
-    if(currentWeight.peso < lowestWeightFound.peso){
+for (let i = 1; i < bicycles.length; i++) {
+    const currentWeight = bicycles[i]
+    if (currentWeight.peso < lowestWeightFound.peso) {
         lowestWeightFound = currentWeight;
     }
 }
@@ -184,10 +184,25 @@ const footballClubs = [
 
 //CAMBIARE I PUNTI FATTI E I FALLI SUBITI CON DEI NUMERI RANDOM
 
-const randomPoints = Math.floor(Math.random() * 115)
-const randomFauls = Math.floor(Math.random() * 180)
+for(let i = 0; i < footballClubs.length; i++){
+    const currentClub = footballClubs[i]
+    currentClub.puntiFatti = Math.floor(Math.random() * 115)
+    currentClub.falliSubiti = Math.floor(Math.random() * 180)
+}
+console.log(footballClubs);
+
 
 
 
 //CREARE UN NUOVO ARRAY SOLO CON I NOMI DELLE SQUADRE E I FALLI SUBITI
+const updatedFootballClubs = footballClubs.map((club) => {
+    const { nome, falliSubiti } = club
+    return {
+        nome,
+        falliSubiti
+    }
+});
+
 //STAMPARE IL NUOVO ARRAY IN CONSOLE
+
+console.log(updatedFootballClubs);
